@@ -1,0 +1,129 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+        <meta charset="UTF-8"/>
+        <meta name="author" content="Vinicious"/>
+        <!--fontawesome-->
+        <link rel="stylesheet" href="{% static 'fontawesome-free-6.2.0-web\css\all.min.css'%}"/>
+        <!--stylesheet-->
+        <link rel="stylesheet" href="{% static 'footer.css'%}">
+    </head>
+    <body>
+        <div class="footer-container">
+            <div class="reach-us">
+                <h1>GET IN TOUCH WITH US TODAY!</h1>
+                <p>
+                    <i class="fa-solid fa-phone"></i>
+                    (414) 847 - 3207
+                </p>
+                <p>
+                    <i class="fa-solid fa-envelope"></i>
+                    INFO@ARCHITECT.COM
+                </p>
+
+                <img src="{% static 'images\62f3e7e4d640655742f754d2_logo-white-architect-webflow-ecommerce-template.svg'%}">
+            </div>
+            <div class="my-links">
+                <div>
+                    <h2>MENU</h2>
+                    <p>
+                        <a href="{%url 'index'%}">HOME V1</a>
+                    </p>
+                    <p>
+                        <a href="#">HOME V2</a>
+                    </p>
+                    <p>
+                        <a href="#">HOME V3</a>
+                    </p>
+                    <p>
+                        <a href="{%url 'about'%}">ABOUT</a>
+                    </p>
+                    <p>
+                        <a href="{% url 'show-services'%}">SERVICES</a>
+                    </p>
+                    <p>
+                        <a href="#">SERVICE SINGLE</a>
+                    </p>
+                    <p>
+                        <a href="{%url 'blog'%}">BLOG V1</a>
+                    </p>
+                    <p>
+                        <a href="#">BLOG V2</a>
+                    </p>
+                    <p>
+                        <a href="#">BLOG V3</a>
+                    </p>
+                    <p>
+                        <a href="#">BLOG POST</a>
+                    </p>
+                </div>
+                <div>
+                    <p>
+                        <a href="{%url 'contact'%}">CONTACT V1</a>
+                    </p>
+                    <p>
+                        <a href="#">CONTACT V2</a>
+                    </p>
+                    <p>
+                        <a href="#">CONTACT V3</a>
+                    </p>
+                    <p>
+                        <a href="{%url 'portfolio'%}">PORTFOLIO</a>
+                    </p>
+                    <p>
+                        <a href="#">PORTFOLIO SINGLE</a>
+                    </p>
+                    <p>
+                        <a href="#">PACKAGE SINGLE</a>
+                    </p>
+                    <p>
+                        <a href="#">MORE VINICIOUS TEMPLATES</a>
+                    </p>
+                </div>
+                <div>
+                    <h2>UTILITY PAGES</h2>
+                    <p>
+                        <a href="#">START HERE</a>
+                    </p>
+                    <p>
+                        <a href="#">STYLEGUIDE</a>
+                    </p>
+                    <p>
+                        <a href="#">404 NOT FOUND</a>
+                    </p>
+                    <p>
+                        <a href="#">PASSWORD</a>
+                    </p>
+                    <p>
+                        <a href="#">LICENCES</a>
+                    </p>
+                    <p>
+                        <a href="#">CHANGELOG</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="credits">
+            <p> Copyright 2023 Designed By <a href="#">Vinicious</a></p>
+            <p>
+                <a href="https://www.facebook.com/vinius.muthii.9">
+                    <i class="fab fa-facebook fa-2x"></i>
+                </a>
+                <a href="https://www.twitter.com/im_vinicious">
+                    <i class = "fab fa-twitter fa-2x"></i>
+                </a>
+                <a href="https://www.instagram.com/im_vinicious">
+                    <i class="fab fa-instagram fa-2x"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/vinius-muthii-66086423b/">
+                    <i class="fab fa-linkedin fa-2x"></i>
+                </a>
+                <a href="https://github.com/Mugovinius">
+                    <i class="fab fa-github fa-2x"></i>
+                </a>
+            </p>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,27 @@
+{%extends 'design/home.html'%}
+
+{%block content%}
+    <center>
+        <br><br><br>
+        <br><br><br>
+        {%if user.is_authenticated%}
+            <h1>ALL PORTFOLIOS</h1>
+            {%for portfolio in all_portfolios%}
+                <div class="my-portfolio">   
+                    <div>
+                        <h2>{{portfolio.portfolio_name}}</h2>
+                        <h3>Location:{{portfolio.location}}</h3>
+                        <h3>Service:{{portfolio.service}}</h3>
+                        <h3>Date:{{portfolio.date}}</h3>
+                        <button class="card-update">
+                            <a href="{% url 'update-portfolio' portfolio.id %}">Update</a>
+                        </button>
+                        <button class="card-delete">
+                            <a href="{% url 'delete-portfolio' portfolio.id %}">Delete</a>
+                        </button>
+                    </div>
+                    <img src="{{portfolio.portfolio_image.url}}">
+                </div>
+            {%endfor%}
+        {%endif%}
+{%endblock%}

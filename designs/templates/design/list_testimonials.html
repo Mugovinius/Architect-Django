@@ -1,0 +1,31 @@
+{%extends 'design/home.html'%}
+
+{%block content%}
+    <center>
+        <br><br><br>
+        <br><br><br>
+        {%if user.is_authenticated%}
+            <h1>ALL TESTIMONIALS</h1>
+            {%for testimonial in all_testimonials%}
+                {%if testimonial.approved%}
+                    <div class="my-portfolio">   
+                        <div>
+                            <img src="{{testimonial.profile_image.url}}" class="testimonial-image">
+                            <h2>Name: {{testimonial.profile_name}}</h2>
+                            <h3>Location: {{testimonial.profile_location}}</h3>
+                            <h3>Quotation: {{testimonial.testimonial_quotation}}</h3>
+                            <h3>Description: {{testimonial.testimonial_desc}}</h3>
+                            <br>
+                            <button class="card-update">
+                                <a href="{% url 'update-testimonial' testimonial.id %}">Update</a>
+                            </button>
+                            <button class="card-delete">
+                                <a href="{% url 'delete-testimonial' testimonial.id %}">Delete</a>
+                            </button>
+                        </div>
+                        <img src="{{testimonial.testimonial_image.url}}">
+                    </div>
+                {%endif%}
+            {%endfor%}
+        {%endif%}
+{%endblock%}

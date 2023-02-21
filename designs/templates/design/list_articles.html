@@ -1,0 +1,27 @@
+{%extends 'design/home.html'%}
+
+{%block content%}
+    <center>
+        <br><br><br>
+        <br><br><br>
+        {%if user.is_authenticated%}
+            <h1>ALL ARTICLES</h1>
+            {%for article in all_articles%}
+                <div class="my-portfolio">   
+                    <div>
+                        <h2>{{article.article_header}}</h2>
+                        <h3>Date:{{article.article_date}}</h3>
+                        <h3>Category:{{article.article_category}}</h3>
+                        <h2>{{article.id}}</h2>
+                        <button class="card-update">
+                            <a href="{% url 'update-article' article.id %}">Update</a>
+                        </button>
+                        <button class="card-delete">
+                            <a href="{% url 'delete-article' article.id %}">Delete</a>
+                        </button>
+                    </div>
+                    <img src="{{article.article_image.url}}">
+                </div>
+            {%endfor%}
+        {%endif%}
+{%endblock%}

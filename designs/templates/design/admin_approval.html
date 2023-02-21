@@ -1,0 +1,30 @@
+{%extends 'design/home.html'%}
+
+{%block content%}
+<br><br><br>
+        <br><br>
+            <h1>Admin Dashboard</h1>
+            <br>
+                <form action="" method=POST>
+                    {%csrf_token%}
+                <table class="my-table">
+                    <tr>
+                        <th> Testimonial Name</th>
+                        <th>Approval Status</th>
+                    </tr>
+                    {%for testimonial in testimonial_list%}
+                    <tr>
+                        <td> {{testimonial}}</td>
+                        <td>
+                            {%if testimonial.approved%}
+                                <input type="checkbox" checked="checked" value={{testimonial.id}} name="cboxes">
+                            {%else%}
+                                <input type="checkbox" value={{testimonial.id}}, name="cboxes">
+                            {%endif%}
+                        </td>
+                    </tr>
+                    {%endfor%}
+                </table>
+                <br/><br/>
+                <button class="card-update" type="submit">Update Status</button>
+{%endblock%}

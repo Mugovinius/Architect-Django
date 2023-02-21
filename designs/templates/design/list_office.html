@@ -1,0 +1,28 @@
+{%extends 'design/home.html'%}
+
+{%block content%}
+    <center>
+        <br><br><br>
+        <br><br><br>
+        {%if user.is_authenticated%}
+            <h1>ALL OFFICES</h1>
+            {%for office in all_offices%}
+                <div class="my-portfolio">   
+                    <div>
+                        <h2>{{office.city}}</h2>
+                        <h3>Phone Number:{{office.phone_number}}</h3>
+                        <h3>Email:{{office.email_address}}</h3>
+                        <h3>Address:{{office.physical_address}}</h3>
+                        <h3>{{office.basic_desc}}</h3>
+                        <button class="card-update">
+                            <a href="{% url 'update-office' office.id %}">Update</a>
+                        </button>
+                        <button class="card-delete">
+                            <a href="{% url 'delete-office' office.id %}">Delete</a>
+                        </button>
+                    </div>
+                    <img src="{{office.office_pic.url}}">
+                </div>
+            {%endfor%}
+        {%endif%}
+{%endblock%}

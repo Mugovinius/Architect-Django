@@ -1,0 +1,602 @@
+html{
+    box-sizing: border-box;
+}
+.container{
+    margin-top: 30px;
+}
+.b-img{
+    width:100%;
+    z-index: 0;
+    position: relative;
+}
+.my-header{
+    position: absolute;
+    left: 40px;
+    width: 70%;
+    top: 200px;
+    color: #fff;
+}
+.my-header h3{
+    text-align: center;
+}
+.my-header h1{
+    font-size: 6rem;
+}
+.my-header p{
+    font-size: 1.2rem;
+}
+.my-btns{
+    border-radius: 25px;
+    padding: 20px;
+    background-color: #fff;
+    color: black;
+    border: transparent;
+}
+.about-us{
+    margin: 20px;
+}
+.about-us h3{
+    font-weight: lighter;
+}
+.more-about{
+    margin: 10px;
+    border-radius: 25px;
+    padding: 20px;
+    background-color: black;
+    color: #fff;
+    border: transparent;
+    float: right;
+}
+.about-container{
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.about-container p{
+    font-size: 1.2rem;
+    padding: 10px;
+}
+.about-gallery{
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.more-gallery{
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.pic1{
+    max-width: 60%;
+    margin: 10px;
+}
+.more-gallery img{
+    max-width: 100%;
+}
+.our-services{
+    margin: 10px;
+    text-align: center;
+}
+.our-services h3{
+    font-weight: lighter;
+}
+.myform{
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 25px;
+    width: 90%;
+}
+.myform input{
+    width: 60%;
+    border-radius: 25px;
+    padding: 10px;
+    margin: 10px;
+}
+.myinput{
+    width: 60%;
+    border-radius: 25px;
+    padding: 10px;
+    margin: 10px;
+}
+.myform select{
+    width: 50%;
+    border-radius: 25px;
+    padding:5px;
+}
+.myform textarea{
+    width: 50%;
+    border-radius: 25px;
+    padding: 10px;
+}
+.mysubmit{
+    width:50%;
+    background-color: orangered;
+    border-radius: 25px;
+}
+.myservices{
+    width: 80%;
+    padding: 10px;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px dashed black;
+    border-radius: 25px;
+
+}
+.img1{
+    max-width: 100%;
+    margin-left: 30px;
+    padding: 20px;
+}
+.div-info{
+    width: 50%;
+    padding: 20px;
+}
+.div-info h2{
+    font-size: 2rem;
+}
+.div-info p{
+    font-size: 1.2rem;
+}
+.card-update{
+    background-color: orangered;
+    padding: 10px;
+    border: transparent;
+    border-radius: 25px;
+    width: 40%;
+}
+.card-update a{
+    text-decoration: none;
+}
+.card-delete{
+    background-color: red;
+    padding: 10px;
+    border: transparent;
+    border-radius: 25px;
+    width: 40%;
+}
+.card-delete a{
+    text-decoration: none;
+}
+.services-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 10px;
+    width: auto;
+    overflow-x:scroll;
+}
+.indiv-service{
+    padding: 10px;
+    border: 0.5px solid lightgray;
+    border-radius: 25px;
+    text-align: center;
+    margin: 10px;
+    width: 350px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    position: relative;
+}
+.indiv-service a{
+    text-decoration: none;
+    color: black;
+    font-size: 1rem;
+}
+.service-left{
+    float: left;
+}
+.service-right{
+    float: right;
+}
+.div1{
+    text-align: center;
+    margin: 20px;
+}
+.div1 button{
+    padding: 20px;
+    background-color: black;
+    color: #fff;
+}
+.div1 a{
+    text-decoration: underline;
+    font-size: 1rem;
+    color: black;
+}
+.our-portfolio{
+    background-color: black;
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    left: 0;
+    right: 0;
+}
+.our-portfolio div{
+    padding: 20px;
+}
+.our-portfolio a{
+    margin-top: 5%;
+    margin-right: 20px;
+    color: #fff;
+}
+.my-portfolio{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 20px;
+    padding: 10px;
+    border: 2px dashed black;
+    border-radius: 25px;
+}
+.my-portfolio img{
+    max-width: 50%;
+}
+.my-portfolio div{
+    padding: 20px;
+    text-align: left;
+    margin-top: 40px;
+}
+.portfolio-container{
+    background-color: black;
+    color: #fff;
+    display: grid;
+    grid-template-columns: repeat(2, 5fr);
+    justify-content: space-between;
+    width: auto;
+}
+.indiv-portfolio img{
+    max-width: 90%;
+}
+.portfolio-details{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.indiv-portfolio{
+    margin: 10px;
+}
+.video-container{
+    margin-top: 30px;
+    text-align: center;
+    position: relative;
+}
+.video-container h1{
+    font-size: 5rem;
+}
+.video-back{
+    position: relative;
+    max-width: 95%;
+}
+.video-front{
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    top: 50%;
+    bottom: 50%;
+    max-width: 20%;
+}
+.more-info{
+    background-color: black;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    font-size: 1.5rem;
+    margin-top: 20px;
+    border: transparent;
+}
+.testimonials{
+    margin: 20px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+.testimonials h1{
+    font-size: 3.5rem;
+}
+.div-2{
+    width: 700px;
+    margin-top: 80px;
+}
+.div-2 p{
+    font-size: 1.2rem;
+}
+.testimonial-image{
+    max-width: 20%;
+    border-radius: 50%;
+}
+.testimonial-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 10px;
+    overflow-x: scroll;
+}
+.my-testimonials{
+    width: 700px;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+.indiv-testimonial{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 10px;
+    padding: 10px;
+}
+.indiv-testimonial p{
+    font-size: 1.2rem;
+}
+.testimonial-img{
+    max-width: 95%;
+}
+.testimonial-img1{
+    max-width:20%;
+    margin: 5px;
+    border-radius: 50%;
+}
+.my-table{
+    width: 90%;
+    padding: 30px;
+    border: 1px solid black;
+    border-radius: 25px;
+}
+.my-table td{
+    border: 1px solid black;
+    padding: 10px;
+}
+.my-contact{
+    position: relative;
+}
+.pic2{
+    width: 100%;
+    position: relative;
+    margin-top: 20px;
+}
+.my-contact-info{
+    padding: 30px;
+    margin: 30px;
+    position: absolute;
+    top:30%;
+    text-align: center;
+    color:black;
+}
+.my-contact-info p{
+    font-size: 1.2rem;
+}
+.my-contact-info button{
+    background-color: #fff;
+    color:black;
+    padding: 20px;
+    text-align: center;
+    font-size: 1.5rem;
+    margin-top: 20px;
+    border: transparent;
+}
+.my-contact-info h1{
+    font-size: 4rem;
+}
+.our-blogs{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    left: 0;
+    right: 0;
+}
+.our-blogs div{
+    padding: 20px;
+}
+.our-blogs a{
+    margin-top: 5%;
+    margin-right: 20px;
+    color: black;
+}
+.article-container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    padding: 20px;
+    background-color: black;
+    border-bottom: 1px solid #fff;
+}
+.indiv-article{
+    color: #fff;
+    padding: 10px;
+}
+.indiv-article h3, h2,img{
+    padding: 5px;
+}
+.article-img{
+    max-width: 90%;
+}
+/* all_services.html*/
+.all-services{
+    width: 70%;
+    margin: 20px;
+    padding: 10px;
+}
+.all-services h1{
+    font-size: 4rem;
+}
+.all-services p{
+    font-size: 1.2rem;
+}
+.my-services{
+    display: grid;
+    grid-template-columns: repeat(3,2fr);
+}
+.our-service{
+    margin: 20px;
+    padding: 40px;
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 25px;
+}
+.our-service p{
+    font-size: 1.2rem;
+}
+.our-service a{
+    text-decoration: underline;
+    color: black;
+}
+@media screen and (max-width:992px) {
+    .my-header{
+        width: auto;
+        top:100px;
+        left: 20px;
+    }
+    .my-header h1{
+        font-size: 4rem;
+    }
+    .my-header p{
+        font-size: 1.2rem;
+    }
+    .my-btns{
+        display: block;
+        text-align: center;
+        padding: 20px;
+        margin: 10px;
+    }
+    .about-us{
+        margin-top: 50px;
+    }
+    .about-container{
+        flex-direction: column;
+    }
+    .portfolio-container{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .indiv-portfolio img{
+        max-width: 95%;
+    }
+    .video-front{
+        top: 50%;
+    }
+    .video-container h1{
+        font-size: 3rem;
+    }
+    .my-contact-info h1{
+        font-size: 2rem;
+    }
+    .article-container{
+        grid-template-columns: repeat(2,1fr);
+    }
+    .my-services{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+@media screen and (max-width:600px) {
+    .my-header{
+        width: auto;
+        top:100px;
+        left: 10px;
+    }
+    .my-header h1{
+        font-size: 1.5rem;
+    }
+    .my-header h3{
+        font-size:smaller;
+    }
+    .my-header p{
+        font-size: 1rem;
+    }
+    .my-btns{
+        display: inline;
+        padding: 10px;
+    }
+    .about-us{
+        margin-top: 50px;
+    }
+    .about-container{
+        flex-direction: column;
+    }
+    .about-gallery{
+        flex-direction: column;
+    }
+    .more-gallery{
+        flex-direction: column;
+    }
+    .pic1{
+        max-width: 100%;
+    }
+    .more-gallery img{
+        margin: 5px;
+    }
+    .my-portfolio{
+        flex-direction: column;
+    }
+    .my-portfolio img{
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+
+    }
+    .portfolio-container{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .indiv-portfolio img{
+        max-width: 95%;
+    }
+    .portfolio-details{
+        display: grid;
+        grid-template-columns: repeat(2, 2fr);
+    }
+    .video-front{
+        top: 60%;
+    }
+    .video-container h1{
+        font-size: 2rem;
+    }
+    .testimonials{
+        flex-direction: column;
+        margin-top: 0;
+        justify-content: space-evenly;
+    }
+    .testimonials h1{
+        font-size: 2rem;
+    }
+    .div-2{
+        width: auto;
+        margin-top: 0;
+    }
+    .my-testimonials{
+        width: 400px;
+        margin: 20px;
+    }
+    .indiv-testimonial{
+        flex-direction: column;
+    }
+    .testimonial-img1{
+        max-width: 30%;
+    }
+    .my-contact-info{
+        top: 10px;
+        margin: 5px;
+        padding: 5px;
+    }
+    .my-contact-info h1{
+        font-size: 1.2rem;
+    }
+    .my-contact-info p{
+        font-size: medium;
+    }
+    .my-contact-info button{
+        padding: 5px;
+        font-size: 1rem;
+    }
+    .article-container{
+        grid-template-columns: repeat(1,1fr);
+    }
+    .all-services h1{
+        font-size: 3rem;
+    }
+    .my-services{
+        grid-template-columns: repeat(1,1fr);
+    }
+}

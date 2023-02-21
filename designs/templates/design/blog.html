@@ -1,0 +1,74 @@
+{% extends 'design/home-blog.html' %}
+{%load static %}
+<!DOCTYPE html>
+<html>
+    <body>
+        {%block content%}
+            <div class="my-blog">
+                <h2>BLOG</h2>
+                <h1>ARTICLES & RESOURCES</h1> 
+            </div>
+            <div class="blog-container">
+                <div class="indiv-blog">
+                    {%for blog in trends%}
+                        <div>
+                            <img src={{blog.article_image}} class="my-blog-image">
+                            <h3>{{blog.article_category}} ---{{blog.article_date}}</h3>
+                            <h2>{{blog.article_header}}</h2>
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="details-blogs">
+                    {%for blog in resources%}
+                        <div class="indiv-details">
+                            <h3>{{blog.article_category}} ---{{blog.article_date}}</h3>
+                            <h2>{{blog.article_header}}</h2>
+                        </div>
+                    {%endfor%}
+                    {%for blog in designs%}
+                        <div class="indiv-details">
+                            <h3>{{blog.article_category}} ---{{blog.article_date}}</h3>
+                            <h2>{{blog.article_header}}</h2>
+                        </div>
+                    {%endfor%}
+                </div>
+            </div>
+            <div class="subscribe">
+                <h2>SUBSCRIBE TO OUR NEWSLETTER</h2>
+                <form action="" method=POST>
+                    <input type="email" placeholder="EMAIL ADDRESS" name="email" id="email" class="my-input">
+                    <input type="submit" value="SUBSCRIBE" class="my-submit">
+                </form>
+            </div>
+            <br>
+            <center>
+                <h1 style="font-size:3rem;">LATEST POSTS</h1>    
+            </center>
+            <div class="article-container">
+                <div class="my-buttons">
+                    <button class="indiv-btn">
+                        <a href="{%url 'blog'%}">ALL</a>
+                    </button>
+                    <button class="indiv-btn">
+                        <a href="{%url 'designs'%}">DESIGN</a>
+                    </button>
+                    <button class="indiv-btn">
+                        <a href="{%url 'resources'%}">RESOURCES</a>
+                    </button>
+                    <button class="indiv-btn">
+                        <a href="{%url 'trends'%}">TRENDS</a>
+                    </button>
+                </div>
+                <div class="actual-articles">
+                    {%for article in blog_details%}
+                        <div class="indiv-article">
+                            <img src={{article.article_image}} class="article-img">
+                            <h3>{{article.article_category}} -----{{article.article_date}}</h3>
+                            <h2>{{article.article_header}}</h2>
+                        </div>
+                    {%endfor%}
+                </div>
+            </div>
+        {%endblock%}
+    </body>
+</html>

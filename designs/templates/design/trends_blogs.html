@@ -1,0 +1,34 @@
+{% extends 'design/home-blog.html' %}
+
+{%block content%}
+    <div class="blog-nav">
+        <div class="blog-title">
+            <h3>CATEGORY</h3>
+            <h2>TRENDS</h2>
+        </div>
+        <ul class="blog-links">
+            <li>
+                <a href="{%url 'blog'%}">ALL</a>
+            </li>
+            <li>
+                <a href="{%url 'designs'%}">DESIGN</a>
+            </li>
+            <li>
+                <a href="{%url 'resources'%}">RESOURCES</a>
+            </li>
+            <li>
+                <a href="{% url 'trends'%}">TRENDS</a> 
+            </li>
+        </ul>
+    </div>
+    <br>
+    <div class="trend-container">
+        {%for article in trends_articles%}
+            <div class="indiv-trend">
+                <img src={{article.article_image}} class="trend-img">
+                <h3>{{article.article_category}}----{{article.article_date}}</h3>
+                <h2>{{article.article_header}}</h2>
+            </div>
+        {%endfor%}
+    </div>
+{%endblock%}

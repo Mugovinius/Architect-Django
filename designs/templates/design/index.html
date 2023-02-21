@@ -1,0 +1,157 @@
+{%extends 'design/home.html'%}
+{%load static%}
+<!DOCTYPE html>
+<html>
+    <body>
+        {%block content%}
+            <img src="{% static 'images\62f3f0c85a056677d5b2c4c3_home-v1-hero-bg-image-architect-webflow-ecommerce-template-p-1600.jpg' %}" class="b-img"/>
+            <div class="my-header">
+                <h3>ARCHITECTURE FIRM</h3>
+                <h1>WE ARE A FINE ARCHITECTURE FIRM IN NEWYORK</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostru.</p>
+                <button class="my-btns">GET IN TOUCH</button>
+                <button class="my-btns">BROWSE SERVICES</button>
+            </div>
+            <div class="about-us">
+                <button class="more-about">MORE ABOUT US</button>
+                <h3>ABOUT THE FIRM</h3>
+                <h1>WE DESIGN UNIQUE PLACES THAT TELL A STORY</h1>
+            </div>
+            <div class="about-container">
+                <p>Hendrerit augue libero ut sollicitudin velit iaculis mi  imperdiet volutpat at aliquet mauris ullamcorper amet  commodo commodo arcu gravida ut urna  a nec est quis morbi nec mauris vel iaculis nulla laoreet sagittis feugiat.</p>
+                <p>Adipiscing felis ut turpis quis sed ut habitant semper eget sed at ipsum eget enim amet  nunc libero id neque iaculis consequat porttitor eu  eu porttitor sed feugiat velit purus sit ullamcorper elementum nisl condimentum.</p>
+                <p>Ultrices id platea gravida aliquet pretium egestas auctor mauris porta fames id tellus pretium pretium posuere amet mauris praesent ornare sit scelerisque porta magna ultrices convallis ut massa lobortis augue porttitor fames velit dictum.</p>
+            </div>
+            <div class="about-gallery">
+                <img src="{% static 'images\62f41d54b434a33611fc1aaa_about-the-firm-image-1-architect-webflow-ecommerce-template-p-800.jpg'%}" class="pic1">
+                <div class="more-gallery">
+                    <img src="{% static 'images\62f41d530b52a62f7c17eb5b_about-the-firm-image-2-architect-webflow-ecommerce-template-p-800.jpg'%}">
+                    <img src="{% static 'images\62f41d53e54e01d69b6a0829_about-the-firm-image-3-architect-webflow-ecommerce-template-p-800.jpg'%}">
+                </div>
+            </div>
+            <div class="our-services">
+                <h3>OUR SERVICES</h3>
+                <h1>BROWSE OUR SET OF SERVICES</h1>
+                <button class="service-left">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <button class="service-right">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+            </div>
+            <br><br>
+            <div class="services-container">
+                {%for service in service_list%}
+                    <div class="indiv-service">
+                        <img src={{service.service_image}}>
+                        <h2>{{service.service_name}}</h2>
+                        <p>{{service.description}}</p>
+                        <a href="{% url 'show-service' service.id %}">
+                            View Service
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </a>
+                    </div>
+                {%endfor%}
+            </div>
+            <div class="div1">
+                <button>GET IN TOUCH</button>
+                <a href="#">BROWSE ALL SERVICES</a>
+            </div>
+            <br><br>
+            <div class="our-portfolio">
+                <div>
+                    <h3>OUR PORTFOLIO</h3>
+                    <h1>LAST PROJECTS WE DESIGNED</h1>
+                </div>
+                <a href="#">BROWSE PORTFOLIO</a>
+            </div>
+            <div class="portfolio-container">
+                {%for portfolio in all_portfolios%}
+                    <div class="indiv-portfolio">
+                        <img src={{portfolio.portfolio_image}}>
+                        <h2>{{portfolio.portfolio_name}}</h2>
+                        <div class="portfolio-details">
+                            <span>
+                                <h3>DATE</h3>
+                                <br>
+                                <h3>{{portfolio.date}}</h3>
+                            </span>
+                            <span>
+                                <h3>LOCATION</h3>
+                                <br>
+                                <h3>{{portfolio.location}}</h3>
+                            </span>
+                            <span>
+                                <h3>SERVICE</h3>
+                                <br>
+                                <h3>{{portfolio.service}}</h3>
+                            </span>
+                        </div>
+                    </div>
+                {%endfor%}
+            </div>
+            <div class="video-container">
+                <h2>WATCH VIDEO</h2>
+                <h1>CREATING UNIQUE DESIGNS</h1>
+                <img src="{% static 'images\62fd36b9fd927617fcf3936f_initial-concept-slider-image-1-architect-webflow-ecommerce-template.jpg'%}" class="video-back">
+                <img src="{% static 'images\62f51b40cea373075af5f465_play-button-architect-webflow-ecommerce-template.svg'%}"  class="video-front">
+                <button class="more-info">GET IN TOUCH</button>
+            </div>
+            <div class="testimonials">
+                <div>
+                    <h2>TESTIMONIALS</h2>
+                    <h1>WHAT OUR CLIENTS SAY ABOUT US</h1>
+                </div>
+                <div class="div-2">
+                    <p>Hendrerit augue libero ut sollicitudin velit iaculis mi  imperdiet volutpat at aliquet maurisull amcorper
+                        amet  commodo commodo arcugravida ut urna  a nec est quis morbi nec mauris vel iaculis nulla laoreet sagittis feugiat.
+                    </p>
+                </div>
+            </div>
+            <div class="testimonial-container">
+                {%for testimonial in all_testimonials %}
+                    {%if testimonial.approved%}
+                        <div class="my-testimonials">
+                            <img src={{testimonial.testimonial_image}} class="testimonial-img">
+                            <div class="indiv-testimonial">
+                                <img src={{testimonial.profile_image}} class="testimonial-img1">
+                                <div>
+                                    <h3>{{testimonial.profile_name}}, {{testimonial.profile_location}}</h3>
+                                    <h2>"{{testimonial.testimonial_quotation}}"</h2>
+                                    <p>{{testimonial.testimonial_desc}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    {%endif%}
+                {%endfor%}
+            </div>
+            <div class="my-contact">
+                <img src="{% static 'images\62fe849a836d6e682d1a458d_blog-post-content-image-architect-webflow-ecommerce-template.jpg'%}" class="pic2">
+                <div class="my-contact-info">
+                    <h1>GET IN TOUCH TODAY TO GET A FREE PROJECT QUOTE</h1>
+                    <p>Hendrerit augue libero ut sollicitudin velit iaculis mi  imperdiet volutpat at aliquet mauris solmer ullamcorper amet  commodo commodo arcu gravida ut urna  a nec es.</p>
+                    <button>GET IN TOUCH</button>
+                </div>
+            </div>
+            <br><br>
+            <div class="our-blogs">
+                <div>
+                    <h3>ARTICLES</h3>
+                    <h1>BROWSE OUR ARTICLES AND NEWS</h1>
+                </div>
+                <a href="#">BROWSE ALL ARTICLES</a>
+            </div>
+            <div class="article-container">
+                {%for article in all_articles%} 
+                    <div class="indiv-article">
+                        <img src={{article.article_image}} class="article-img">
+                        <h3>{{article.article_category}}-----{{article.article_date}}</h3>
+                        <h2>{{article.article_header}}</h2>
+                    </div>
+                {%endfor%}
+            </div>
+            <script>
+            </script>
+        {%endblock%}
+    </body>
+</html>

@@ -1,0 +1,77 @@
+{% load static%}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta charset="UTF-8"/>
+        <meta name="author" content="Vinicious"/>
+        <title>Home 1</title>
+        <!--fontawesome-->
+        <link rel="stylesheet" href="{% static 'fontawesome-free-6.2.0-web\css\all.min.css'%}"/>
+        <!--stylesheet-->
+        <link rel="stylesheet" href="{% static 'home.css' %}"/>
+    </head>
+    <body>
+        {%include 'design/navbar.html'%}
+        <div class="container">
+            {%if messages%}
+                {%for message in messages%}
+                    {{message}}
+                {%endfor%}
+            {%endif%}
+            {%block content%}
+
+            {%endblock%}
+        </div>
+        <br><br>
+        {%include 'design/footer.html'%}
+        <script>
+        /*
+            const prevBtn = document.querySelector(".service-left");
+            const nextBtn = document.querySelector(".service-right");
+            let currentItems = 0;
+            var data = JSON.parse("{{data|escapejs}}");
+            console.log(data);
+            displayNext(data);
+            function displayNext(mydata){
+                const serviceCont = document.querySelector(".indiv-service");
+                for (var i=0; i< data.length; i++){
+                    var row =
+                            ${mydata[i].service_image}
+                            ${mydata[i].service_name}
+                            ${mydata[i].description}
+                            
+                        serviceCont.innerHTML=row;
+                }
+            }
+            
+                let displayMenu = data.map(function(item){
+                    return `<div class="indiv-service">
+                    <img src=${item.service_image}>
+                    <h2>${item.service_name}</h2>
+                    <p>${item.description}</p>
+                </div>`;
+                });
+                displayMenu = displayMenu.join("");
+                serviceCont.innerHTML = displayMenu;
+            }
+            
+            const displayNextThree = () => {
+                displayNext(data.slice(currentItems, currentItems + 3));
+            }
+            const miniWidth = () => {
+                displayNext(data.slice(currentItems, currentItems + 1));
+            }            
+            
+            window.addEventListener("DOMContentLoaded", function(){
+                if (this.window.innerWidth <=555){
+                    miniWidth();
+                }else{
+                    //console.log(window.innerWidth);
+                    displayNextThree();
+                }
+            });
+            */
+        </script>
+    </body>
+</html>

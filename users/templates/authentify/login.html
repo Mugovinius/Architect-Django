@@ -1,0 +1,18 @@
+{%extends 'design/home.html'%}
+
+{%block content%}
+    <center>
+        <br><br><br>
+        <br><br><br>
+        <h1>Login</h1>
+        <br>
+        <form action="" method="POST" class="myform">
+            {% csrf_token %}
+            <label for="jina">Username:</label>
+            <input type="text" class="myinput" name="username"><br>
+            <label for="pass">Password:</label>
+            <input type="password" class="myinput" name="password"><br>
+            <input type="submit" value="Submit" class="mysubmit">
+        </form>
+    </center
+{%endblock%}

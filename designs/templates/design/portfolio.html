@@ -1,0 +1,67 @@
+{%extends 'design/home-portfolio.html'%}
+{%load static%}
+<!DOCTYPE html>
+<html>
+    <body>
+        {%block content%}
+            <div class="my-header">
+                <h3>SHOWCASE</h3>
+                <h2>PORTFOLIO</h2>
+            </div>
+            <div class="featured">
+                {%for portfolio in featured%}
+                    <img src={{portfolio.portfolio_image}} class="featured-image">
+                    <button class="featured-btn">FEATURED</button>
+                    <div class="basic-info">
+                        <h2>{{portfolio.portfolio_name}}</h2>
+                        <p>Cursus non ipsum donec poseure ultrices sed mattis feugiat velit massa ullamcorper
+                            orci felis ultricies dolor arcu turpis at volutpat dolor.
+                        </p>
+                    </div>
+                    <div class="more-info">
+                        <span>
+                            <h3>DATE</h3>
+                            <h3>{{portfolio.date}}</h3>
+                        </span>
+                        <span>
+                            <h3>LOCATION</h3>
+                            <h3>{{portfolio.location}}</h3>
+                        </span>
+                        <span>
+                            <h3>SERVICE</h3>
+                            <h3>{{portfolio.service}}</h3>
+                        </span>
+                        <span>
+                            <h3>LEARN MORE</h3>
+                            <a href="#">BROWSE PROJECT</a>
+                        </span>
+                    </div>
+                {%endfor%}
+            </div>
+            <br><br>
+            <div class="portfolio-container">
+                {%for portfolio in all_portfolios%}
+                    <div class="indiv-portfolio">
+                        <img src={{portfolio.portfolio_image}} class="portfolio-pic">
+                        <h2>{{portfolio.portfolio_name}}</h2>
+                        <hr>
+                        <div class="info">
+                            <span>
+                                <h3>DATE</h3>
+                                <h3>{{portfolio.date}}</h3>
+                            </span>
+                            <span>
+                                <h3>LOCATION</h3>
+                                <h3>{{portfolio.location}}</h3>
+                            </span>
+                            <span>
+                                <h3>SERVICE</h3>
+                                <h3>{{portfolio.service}}</h3>
+                            </span>
+                        </div>
+                    </div>
+                {%endfor%}
+            </div>
+        {%endblock%}
+    </body>
+</html>

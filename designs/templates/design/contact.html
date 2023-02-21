@@ -1,0 +1,167 @@
+{%extends 'design/home-contact.html'%}
+{%load static%}
+<!DOCTYPE html>
+<html>
+    <body>
+        {%block content%}
+            <div class="contact-container">
+                <div class="desc">
+                    <h3>CONTACT US</h3>
+                    <h2>GET IN TOUCH</h2>
+                    <p>
+                        <i class="fa-solid fa-phone"></i>
+                        (414) 847- 3207
+                    </p>
+                    <p>
+                        <i class="fa-solid fa-envelope"></i>
+                        INFO@ARCHITECT.COM
+                    </p>
+                </div>
+                <div class="contact-form">
+                    <form action="" method=POST>
+                        <div class="our-inputs">
+                            <input type="text" name="full-name" placeholder="FULL NAME" class="my-inputs">
+                            <input type="email" name="email" placeholder="EMAIL ADDRESS" class="my-inputs">
+                            <input type="text" name="phone" placeholder="PHONE NUMBER" class="my-inputs">
+                            <input type="text" name="subject" placeholder="SUBJECT" class="my-inputs">
+                        </div>
+                        <textarea cols="20" rows="5" placeholder="PLEASE TYPE YOUR MESSAGE HERE..." class="my-textarea"></textarea>
+                        <br>
+                        <input type="submit" value="SEND MESSAGE" class="my-submit">
+                    </form>
+                </div>
+            </div>
+            <div class="our-faqs">
+                <center>
+                    <h3>FAQS</h3>
+                    <h2>HAVE ANY QUESTIONS?</h2>
+                    <p>
+                        Tommorrow tincidunt lobortis feugiat we live at morbi leo urn molestie elementum 
+                        eu facilisis faucibus interdumere.
+                    </p>
+                </center>
+            </div>
+            <div class="faq-container">
+                <div class="indiv-faq">
+                    <div>
+                        <h1>HOW MANY YEARS OF EXPERIENCE DOES YOUR FIRM HAVE?</h1>
+                        <p id="my-toggle">
+                            The pain itself should be important, the adipiscing elit will be followed by the venomous
+                            pretium of laughter. But the mountains
+                        </p>
+                    </div>
+                    <div>
+                        <button class="up-down">
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="indiv-faq">
+                    <div>
+                        <h1>HOW BIG IS YOUR TEAM OF ARCHITECTS?</h1>
+                        <p id="my-toggle">
+                            The pain itself should be important, the adipiscing elit will be followed by the venomous
+                            pretium of laughter. But the mountains
+                        </p>
+                    </div>
+                    <div>
+                        <button class="up-down">
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="indiv-faq">
+                    <div>
+                        <h1>DOES YOUR FIRM HAVE A PROJECT MINIMUM?</h1>
+                        <p id="my-toggle">
+                            The pain itself should be important, the adipiscing elit will be followed by the venomous
+                            pretium of laughter. But the mountains
+                        </p>
+                    </div>
+                    <div>
+                        <button class="up-down">
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="indiv-faq">
+                    <div>
+                        <h1>HOW CAN I GET A QUOTE FOR MY PROJECT?</h1>
+                        <p id="my-toggle">
+                            The pain itself should be important, the adipiscing elit will be followed by the venomous
+                            pretium of laughter. But the mountains
+                        </p>
+                    </div>
+                    <div>
+                        <button class="up-down">
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="offices">
+                <h2>VISIT OUR OFFICES</h2>
+            </div>
+            <div class="office-container">
+                {%for office in offices%}
+                    <div class="indiv-office">
+                        <img src={{office.office_pic}} class="office-pic">
+                        <h2>{{office.city}}</h2>
+                        <hr>
+                        <div class="more-info">
+                            <span class="info">
+                                <h3>ADDRESS</h3>
+                                <h3>{{office.physical_address}}</h3>
+                            </span>
+                            <span class="info">
+                                <h3>CONTACT</h3>
+                                <h3>{{office.phone_number}}</h3>
+                                <h3>{{office.email_address}}</h3>
+                            </span>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="socials">
+                <center>
+                    <h2>FOLLOW US</h2>
+                    <h1>FOLLOW US ON INSTAGRAM</h1>
+                </center>
+            </div>
+            <div class="our-gallery">
+                <div class="gallery-div">
+                        <img src="{%static 'images\62f41d54b434a33611fc1aaa_about-the-firm-image-1-architect-webflow-ecommerce-template-p-800.jpg'%}" class="image1">
+                        <div class="my-img">
+                            <a href="https://www.instagram.com/im_vinicious"><i class="fab fa-instagram fa-4x"></i></a>
+                        </div>
+                </div>
+                <div class="gallery-container">
+                    <div class="more-gallery">
+                        <img src="{%static 'images\62fd3b6d6747b255894e7961_house-architecture-design-featured-image-architect-webflow-ecommerce-template-p-1600.jpg'%}" class="image2">
+                        <div class="my-img">
+                            <a href="https://www.instagram.com/im_vinicious"><i class="fab fa-instagram fa-4x"></i></a>
+                        </div>
+                    </div>
+                    <div class="more-gallery">
+                        <img src="{%static 'images\62f41d53e54e01d69b6a0829_about-the-firm-image-3-architect-webflow-ecommerce-template-p-800.jpg'%}" class="image3">
+                        <div class="my-img">
+                            <a href="https://www.instagram.com/im_vinicious"><i class="fab fa-instagram fa-4x"></i></a>
+                        </div>
+                    </div>
+                    <div class="more-gallery">
+                        <img src="{%static 'images\62fd39834b2c4a269bdd0830_interior-design-san-francisco-thumbnail-v2-architect-webflow-ecommerce-template.jpg'%}" class="image4">
+                        <div class="my-img">
+                            <a href="https://www.instagram.com/im_vinicious"><i class="fab fa-instagram fa-4x"></i></a>
+                        </div>
+                    </div>
+                    <div class="more-gallery">
+                        <img src="{%static 'images\62f527ea87ee5b5c97360d05_miles-johnson-testimonial-image-architect-webflow-ecommerce-template-p-800.jpg'%}" class="image5">
+                        <div class="my-img">
+                            <a href="https://www.instagram.com/im_vinicious"><i class="fab fa-instagram fa-4x"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {%endblock%}
+    </body>
+</html>

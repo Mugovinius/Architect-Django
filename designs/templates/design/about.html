@@ -1,0 +1,136 @@
+{%extends 'design/home-about.html'%}
+{%load static%}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ABOUT US</title>
+        <link rel="stylesheet" href="{% static 'about.css'%}">
+    </head>
+    <body>
+    {%block content%}
+        <img src="{% static 'images\62fa8d7d5e03c065b4184a4d_about-hero-bg-image-architect-webflow-ecommerce-template-p-1600.jpg' %}" class="about-hero"/>
+        <div class="about-header">
+            <h4>ABOUT US</h4>
+            <h1>ABOUT OUR FIRM</h1>
+            <p>It is very important for the patient to be able to follow the coaching process
+                of the current clinical football team,whether it is necessary to suspend it or not.
+            </p>
+            <button class="about-btn">GET IN TOUCH</button>
+        </div>
+        <div class="story-container">
+            <div class="our-story">
+                <h4>OUR STORY</h4>
+                <h2>WE STARTED BACK IN 2012</h2>
+                <p>The pain itself should be followed by the education of the student,but at the same time it
+                    happens that there is a great deal of work and pain. There is no mating.
+                </p>
+                <button class="story-btn">GET IN TOUCH</button>
+            </div>
+            <img src="{% static 'images\62fa960e788bcc4c1cb4efc0_our-story-image-architect-webflow-ecommerce-template-p-800.jpg'%}" class="story-img">
+        </div>
+        <div class="story-container1">
+            <img src="{% static 'images\62fa960e9b439ac2c3807a97_how-we-started-image-architect-webflow-ecommerce-template-p-800.jpg'%}" class="story-img">
+            <div class="our-story">
+                <h4>HOW WE STARTED</h4>
+                <h2>ALL STARTED WITH AN IDEA</h2>
+                <p>The pain itself should be followed by the education of the student,but at the same time it
+                    happens that there is a great deal of work and pain. There is no mating.
+                </p>
+                <button class="story-btn">GET IN TOUCH</button>
+            </div>
+        </div>
+        <div class="our-team">
+            <div>
+                <h4>OUR TEAM</h4>
+                <h2>MEET OUR TEAM</h2>
+            </div>
+            <a href="{% url 'add-team'%}">JOIN OUR TEAM</a>
+        </div>
+        <div class="team-container">
+            {%for member in members%}
+                <div class="indiv-team">
+                    <img src={{member.profile_image}}/>
+                    <h4>{{member.profile_occupation}}</h4>
+                    <h2>{{member.profile_name}}</h2>
+                    <p>{{member.quote}}</p>
+                    <hr>
+                </div>
+            {%endfor%}
+        </div>
+        <div class="my-container">
+            <div class="our-process">
+                <h3>OUR PROCESS</h3>
+                <h1>WE HAVE A SIMPLE,YET EFFECTIVE PROCESS</h1>
+                <button class="process-btn">GET IN TOUCH</button>
+            </div>
+            <div class="process-container">
+                <div>
+                    <h1>01</h1>
+                    <h2>PLANNING</h2>
+                    <p>And now Nibh flatters the pregnant woman, but she needs to drink from an ugly trick,
+                        and she does not need to drink from the great ferment of God.
+                    </p>
+                </div>
+                <div class="div2">
+                    <h1>02</h1>
+                    <h2>DESIGN</h2>
+                    <p>It is easy for me to take up the hate of the quiver of the raccoon, and sometimes the 
+                        various sorrows, for fear or need, just to have lived in the estate of the vestibule.
+                    </p>
+                </div>
+                <div>
+                    <h1>03</h1>
+                    <h2>DOCUMENTING</h2>
+                    <p>who does not flatter vulputate morbi adipiscing sem vestibulum. Idon't have a perfect score,
+                        but i'm going to put it. That employee of my arc is pregnant. Leaven as old age cartoon at trigger.
+                    </p>
+                </div>
+                <div>
+                    <h1>04</h1>
+                    <h2>CONSTRUCTION</h2>
+                    <p>But as there is no need for it to be complete, the university itself wants to put the urn on 
+                        a truck, and the university is free.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <br><br>
+        <div class="our-offices">
+            <h2>OUR OFFICES</h2>
+            <h1>VISIT OUR OFFICES</h1>
+        </div>
+        {%for office in all_offices%}
+            <div class="office-container">
+                <div class="office-desc">
+                    <h1>{{office.city}}</h1>
+                    <p>{{office.basic_desc}}</p>
+                    <h2>
+                        <i class="fa-solid fa-phone fa-2x"></i>
+                        {{office.phone_number}}
+                    </h2>
+                    <h2>
+                        <i class="fa-solid fa-envelope fa-2x"></i>
+                        {{office.email_address}}
+                    </h2>
+                    <h2>
+                        <i class="fa-solid fa-location fa-2x"></i>
+                        {{office.physical_address}}
+                    </h2>
+                </div>
+                <img src={{office.office_pic}} class="office-pic">
+            </div>
+            <br>
+        {%endfor%}
+        <div class="contact-us">
+            <img src="{% static 'images\62fad012a4f4634bdf9242b3_cta-v4-image-architect-webflow-ecommerce-template-p-800.jpg'%}" class="contact-pic">
+            <div>
+                <h1>GET IN TOUCH TODAY</h1>
+                <p>Henderit augue libero ut sollicitudin velit iaculis mi imperdiet volutpat at aliquet
+                    mauris solmer ullamcorper amet co.
+                </p>
+                <button class="contact-btn">GET IN TOUCH</button>
+            </div>
+        </div>
+    {%endblock%}
+    </body>
+</html>

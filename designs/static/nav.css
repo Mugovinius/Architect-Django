@@ -1,0 +1,142 @@
+.logo{
+    padding: 20px;
+    max-width: 70%;
+}
+nav{
+    width:100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: black;
+    left: 0;
+    top:0;
+    position: absolute;
+    z-index: 1;
+    border-bottom: 2px solid #fff;
+}
+.links li{
+    display: inline-block;
+    list-style-type: none;
+    padding: 10px;
+}
+.links a{
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #fff;
+}
+.my-btn{
+    border-radius: 25px;
+    padding: 20px;
+    background-color: #fff;
+    color: black;
+    border: transparent;
+}
+.nav-toggle{
+    background: transparent;
+    border: transparent;
+    display: none;
+    color: #fff;
+}
+.dropheader{
+    color: #fff;
+    font-size: 1.2rem;
+}
+.dropdown{
+    position: relative;
+    display: inline-block;
+}
+.dropdown-content{
+    display: none;
+    position: absolute;
+    background-color:white;
+    min-width: 150px;
+}
+.dropdown-content a{
+    padding: 5px;
+    color: black;
+    text-align: center;
+    
+}
+.dropdown:hover .dropdown-content{
+    display: block;
+}
+.sidebar{
+    position: fixed;
+    top: 65px;
+    left: 0;
+    width: 400px;
+    height: 100%;
+    padding: 10px;
+    transform: translate(-100%);
+    transition: all 0.3s linear;
+    background: black;
+    z-index: 2;
+}
+.show-sidebar{
+    transform: translate(0);
+}
+.mylinks a{
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #fff;
+    text-align: left;
+}
+.mylinks li{
+    list-style-type: none;
+    padding: 5px;
+}
+@media screen and (max-width:992px) {
+    #hide{
+        display: none;
+    }
+    .my-btns{
+        display: block;
+        text-align: center;
+        padding: 20px;
+        margin: 10px;
+    }
+    .logo{
+        max-width: 30%;
+    }
+    .nav-toggle{
+        display: block;
+        margin-right: 10px;
+    }
+    .dropdown{
+        padding-bottom: 10px;
+    }
+    .dropdown-content{
+        background-color: black;
+        width:auto;
+        padding-bottom: 10px;
+    }
+    .dropdown:hover .dropdown-content a{
+        display: inline;
+    }
+}
+@media screen and (max-width:600px) {
+    #hide{
+        display: none;
+    }
+     .sidebar{
+        width: 400px;
+    }
+    .logo{
+        max-width: 10%;
+    }
+    .links li{
+        padding: 2px;
+    }
+    .nav-toggle{
+        display: block;
+        margin-right: 10px;
+    }
+    .dropdown-content{
+        background-color: black;
+        min-width: 300px;
+    }
+    .dropdown:hover .dropdown-content{
+        display: inline-block;
+    }
+}
+

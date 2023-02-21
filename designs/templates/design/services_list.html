@@ -1,0 +1,27 @@
+{%extends 'design/home.html'%}
+
+{%block content%}
+    <center>
+        <br><br><br>
+        <br><br><br>
+        {%if user.is_authenticated%}
+            <h1>ALL SERVICES</h1>
+            {%for service in service_list%}
+                <div class="myservices">
+                       <img src="{{service.service_image.url}}" class="img1">
+                    <div class="div-info">
+                        <h2>{{service.service_name}}</h2>
+                        <br>
+                        {{service.description}}
+                        <br><br>
+                        <button class="card-update">
+                            <a href="{% url 'update-service' service.id %}">Update</a>
+                        </button>
+                        <button class="card-delete">
+                            <a href="{% url 'delete-service' service.id %}">Delete</a>
+                        </button>
+                    </div>
+                </div>
+            {%endfor%}
+        {%endif%}
+{%endblock%}

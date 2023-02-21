@@ -1,0 +1,26 @@
+{%extends 'design/home.html'%}
+
+{%block content%}
+    <center>
+        <br><br><br>
+        <br><br><br>
+        {%if user.is_authenticated%}
+            <h1>TEAM MEMBERS</h1>
+            {%for member in team%}
+                <div class="my-portfolio">   
+                    <div>
+                        <h2>{{member.profile_name}}</h2>
+                        <h3>Occupation:{{member.profile_occupation}}</h3>
+                        <h3>Quote:{{member.quote}}</h3>
+                        <button class="card-update">
+                            <a href="{% url 'update-team' member.id %}">Update</a>
+                        </button>
+                        <button class="card-delete">
+                            <a href="{% url 'delete-team' member.id %}">Delete</a>
+                        </button>
+                    </div>
+                    <img src="{{member.profile_image.url}}">
+                </div>
+            {%endfor%}
+        {%endif%}
+{%endblock%}

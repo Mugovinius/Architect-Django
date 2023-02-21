@@ -1,0 +1,14 @@
+{%extends 'design/home.html'%}
+
+{%block content%}
+    <center>
+        <br><br><br>
+        <br><br><br>
+        <div class="myservices">
+            <img src="{{service.service_image.url}}">
+            <div>
+                <h2>{{service.service_name}}</h2>
+                <p>{{service.description}}</p>
+            </div>
+        </div>
+{%endblock%}

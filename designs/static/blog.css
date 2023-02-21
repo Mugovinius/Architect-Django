@@ -1,0 +1,215 @@
+html{
+    box-sizing: border-box;
+}
+.container{
+    margin-top: 150px;
+}
+.my-blog{
+    background-color: black;
+    color: #fff;
+    padding: 20px;
+}
+.my-blog h2{
+    font-size: 3rem;
+}
+.my-blog h1{
+    font-size: 4rem;
+}
+.blog-container{
+    background-color: black;
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.indiv-blog{
+    width: 700px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    position: relative;
+    margin: 10px;
+    padding: 10px;
+}
+.my-blog-image{
+    max-width: 100%;
+}
+.indiv-details{
+    border-bottom: 1px solid;
+    margin: 10px;
+    padding: 10px;
+}
+.subscribe{
+    margin: 20px;
+    padding: 200px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+}
+.subscribe h2{
+    font-size: 3rem;
+}
+.my-input{
+    width:60%;
+    background-color: black;
+    color: #fff;
+    border: transparent;
+    font-size: 2rem;
+    border-bottom: 1px solid;
+    padding: 5px;
+}
+.my-submit{
+    padding: 20px;
+    border: transparent;
+    border-radius: 25px;
+    font-size: 2rem;
+}
+.article-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.my-buttons{
+    width: 300px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    margin: 10px;
+}
+.indiv-btn{
+    display: block;
+    padding: 10px;
+    border: transparent;
+    border-radius: 25px;
+    width: 200px;
+    margin: 10px;
+    font-size: 1rem;
+}
+.indiv-btn a{
+    text-decoration: none;
+}
+.actual-articles{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    width: fit-content;
+}
+.indiv-article{
+    width: 500px;
+}
+.article-img{
+    max-width: 90%;
+}
+/*blog navbar*/
+.blog-nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px;
+    background-color: black;
+    color: #fff;
+}
+.blog-title{
+    padding: 20px;
+}
+.blog-title h3{
+    font-size: 2rem;
+}
+.blog-title h2{
+    font-size: 3rem;
+}
+.blog-links li{
+    display: inline-block;
+    list-style-type: none;
+    padding: 50px;
+    margin-top: 20px;
+}
+.blog-links a{
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #fff;
+}
+.trend-container{
+    display: grid;
+    grid-template-columns: repeat(2,2fr);
+}
+.indiv-trend{
+    padding: 20px;
+    border: 2px solid blue;
+    border-radius: 25px;
+    margin: 10px;
+}
+.trend-img{
+    max-width: 100%;
+}
+@media screen and (max-width:992px) {
+    .container{
+        margin-top: 60px;
+    }
+    .blog-container{
+        flex-direction: column;
+    }
+    .indiv-blog{
+        width: auto;
+    }
+    .my-blog h2{
+        font-size: 2rem;
+    }
+    .my-blog h1{
+        font-size: 3rem;
+    }
+    .subscribe{
+        padding: 100px;
+    }
+    .my-input{
+        width: 50%;
+    }
+    .my-buttons{
+        width: 200px;
+        margin-left: 0;
+    }
+    .indiv-article{
+        width: auto;
+        margin-left: 2px;
+    }
+    .trend-container{
+        grid-template-columns: repeat(1,1fr);
+    }
+    .blog-links li{
+        padding: 20px;
+    }
+}
+@media screen and (max-width:550px){
+    .subscribe{
+        padding: 50px;
+        margin: 10px;
+    }
+    .subscribe h2{
+        font-size: 2rem;
+    }
+    .my-input{
+        width: 100%;
+    }
+    .my-submit{
+        margin-top: 10px;
+    }
+    .article-container{
+        flex-direction: column;
+    }
+    .indiv-btn{
+        width: 400px;
+    }
+    .actual-articles{
+        grid-template-columns: repeat(1,1fr);
+    }
+    .blog-nav{
+        flex-direction: column;
+    }
+    .blog-title h3{
+        font-size: 1rem;
+    }
+    .blog-title h2{
+        font-size: 2rem;
+    }
+    .blog-links li{
+        padding: 5px;
+    }
+}

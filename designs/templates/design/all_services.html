@@ -1,0 +1,29 @@
+{% extends 'design/home.html' %}
+
+{%block content%}
+    <br><br><br>
+    <br><br>
+    <center>
+        <div class="all-services">
+            <h2>SERVICES</h2>
+            <h1>BROWSE OUR SET OF SERVICES</h1>
+            <p>The price should be in either the tortor nor a sed but tomorrow always the pellentesque
+                tristique in sed for it was said that he needs some viverra faucibos mollis malesuada
+                proin sed amet, mauris ornare quis.
+            </p>
+        </div>
+    </center>
+    <div class="my-services">
+        {% for service in all_services%}
+            <div class="our-service">
+                <img src={{service.service_image}}>
+                <h2>{{service.service_name}}</h2>
+                <p>{{service.description}}</p>
+                <a href="{% url 'show-service' service.id %}">
+                    View Service
+                    <i class="fa-solid fa-chevron-right"></i>
+                </a>
+            </div>
+        {%endfor%}
+        </div>
+{%endblock%}

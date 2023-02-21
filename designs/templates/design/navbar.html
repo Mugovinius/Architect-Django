@@ -1,0 +1,245 @@
+{% load static%}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta charset="UTF-8"/>
+        <meta name="author" content="Vinicious"/>
+        <title>Home 1</title>
+        <!--fontawesome-->
+        <link rel="stylesheet" href="{% static 'fontawesome-free-6.2.0-web\css\all.min.css'%}"/>
+        <!--stylesheet-->
+        <link rel="stylesheet" href="{% static 'nav.css' %}"/>
+    </head>
+    <body>
+        <nav>
+            <div class="logo">
+                <img src="{% static 'images\62f3e7e4d640655742f754d2_logo-white-architect-webflow-ecommerce-template.svg'%}"/>
+            </div>
+            <ul class="links">
+                <li>
+                    <a href="{% url 'index'%}" id="hide">HOME</a>
+                </li>
+                <li>
+                    <a href="{% url 'about'%}" id="hide">ABOUT</a>
+                </li>
+                <!--
+                <li>
+                    <a href="{% url 'blog'%}" id="hide">BLOG</a>
+                </li>
+                -->
+                <li>
+                    <a href="{% url 'contact'%}" id="hide">CONTACT</a>
+                </li>
+                {% if user.is_authenticated %}
+                    <li>
+                        <div class="dropdown">
+                            <h4 class="dropheader" id="hide">PORTFOLIO
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </h4>
+                            <div class="dropdown-content">
+                                <a href="{%url 'portfolio'%}" id="hide">PORTFOLIO</a>
+                                <br><br>
+                                <a href="{% url 'list-portfolios' %}" id="hide"> All PORTFOLIOS</a>
+                                <br><br>
+                                <a href="{% url 'add-portfolio' %}" id="hide">ADD PORTFOLIO</a>
+                            </div>
+                        </div>
+                    </li>
+                {%else%}
+                    <li>
+                        <a href="{%url 'portfolio'%}" id="hide">PORTFOLIO</a>
+                    </li>
+                {%endif%}
+
+                {% if user.is_authenticated %}
+                    <li>
+                        <div class="dropdown">
+                            <h4 class="dropheader" id="hide">SERVICES
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </h4>
+                            <div class="dropdown-content">
+                                <a href="{% url 'show-services'%}" id="hide">SERVICES</a>
+                                <br><br>
+                                <a href="{% url 'list-services' %}" id="hide"> All SERVICES</a>
+                                <br><br>
+                                <a href="{% url 'add-services' %}" id="hide">ADD SERVICE</a>
+                            </div>
+                        </div>
+                    </li>
+                {%else%}
+                    <li>
+                        <a href="{% url 'show-services'%}" id="hide">SERVICES</a>
+                    </li>
+                {%endif%}
+                {% if user.is_authenticated %}
+                    {%if user.is_superuser%}
+                    {%else%}
+                        <li>
+                            <a href="{% url 'logout'%}" id="hide">LOGOUT</a>
+                        </li>
+                    {%endif%}
+                {%else%}
+                    <li>
+                        <a href="{% url 'register-user'%}" id="hide">REGISTER</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'login' %}" id="hide">LOGIN</a>
+                    </li>
+                {%endif%}
+                {% if user.is_authenticated%}
+                    {% if user.is_superuser%}
+                        <li>
+                            <div class="dropdown">
+                                <h4 class="dropheader" id="hide">ADMIN
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                </h4>
+                                <div class="dropdown-content">
+                                    <a href="{% url 'admin-approval'%}" id="hide">DashBoard</a>
+                                    <br><br>
+                                    <a href="{%url 'list-testimonial'%}" id="hide"> All TESTIMONIALS</a>
+                                    <br><br>
+                                    <a href="{%url 'add-testimonial'%}" id="hide">ADD TESTIMONIAL</a>
+                                    <br><br>
+                                    <a href="{% url 'list-articles' %}" id="hide"> All ARTICLES</a>
+                                    <br><br>
+                                    <a href="{% url 'add-article' %}" id="hide">ADD ARTICLE</a>
+                                    <br><br>
+                                    <a href="{%url 'list-team' %}" id="hide">TEAM</a>
+                                    <br><br>
+                                    <a href="{%url 'add-team'%}" id="hide">ADD TEAM</a>
+                                    <br><br>
+                                    <a href="{% url 'list-offices'%}" id="hide">OFFICES</a>
+                                    <br><br>
+                                    <a href="{% url 'add-office'%}" id="hide">ADD OFFICE</a>
+                                    <br><br>
+                                    <a href="{% url 'logout'%}" id="hide">LOGOUT</a>
+                                </div>
+                            </div>
+                            
+                        </li>
+                    {%endif%}
+                {%endif%}
+                <!--
+                <li>
+                    <button class="my-btn" id="hide">GET IN TOUCH</button>
+                </li>
+                -->
+                <li>
+                    <button class="nav-toggle">
+                        <i class="fas fa-bars fa-2x"></i>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+        <aside class="sidebar">
+            <ul class="mylinks">
+                <li>
+                    <a href="{% url 'index'%}">HOME</a>
+                </li>
+                <li>
+                    <a href="{% url 'about'%}">ABOUT</a>
+                </li>
+                <!--
+                <li>
+                    <a href="{% url 'blog'%}">BLOG</a>
+                </li>
+                -->
+                <li>
+                    <a href="{% url 'contact'%}">CONTACT</a>
+                </li>
+                {% if user.is_authenticated %}
+                    {%if user.is_superuser%}
+                    {%else%}
+                        <li>
+                            <a href="{% url 'logout'%}" id="hide">LOGOUT</a>
+                        </li>
+                    {%endif%}
+                {%else%}
+                    <li>
+                        <a href="{% url 'register-user'%}">REGISTER</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'login' %}">LOGIN</a>
+                    </li>
+                {%endif%}
+                {% if user.is_authenticated %}
+                    <li>
+                        <div class="dropdown">
+                            <h4 class="dropheader">PORTFOLIO
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </h4>
+                            <div class="dropdown-content">
+                                <a href="{%url 'portfolio'%}">PORTFOLIO</a>
+                                <br>
+                                <a href="{% url 'list-portfolios' %}"> All PORTFOLIOS</a>
+                                <br>
+                                <a href="{% url 'add-portfolio' %}">ADD PORTFOLIO</a>
+                            </div>
+                        </div>
+                    </li>
+                {%else%}
+                    <li>
+                        <a href="{%url 'portfolio'%}">PORTFOLIO</a>
+                    </li>
+                {%endif%}
+                <br><br>
+                {% if user.is_authenticated %}
+                    <li>
+                        <div class="dropdown">
+                            <h4 class="dropheader">SERVICES
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </h4>
+                            <div class="dropdown-content">
+                                <a href="{% url 'show-services'%}">SERVICES</a>
+                                <br>
+                                <a href="{% url 'list-services' %}"> All SERVICES</a>
+                                <br>
+                                <a href="{% url 'add-services' %}">ADD SERVICE</a>
+                            </div>
+                        </div>
+                    </li>
+                {%else%}
+                    <li>
+                        <a href="{% url 'show-services'%}">SERVICES</a>
+                    </li>
+                {%endif%}
+                <br><br>
+                {% if user.is_authenticated%}
+                    {% if user.is_superuser%}
+                        <li>
+                            <div class="dropdown">
+                                <h4 class="dropheader">ADMIN
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                </h4>
+                                <div class="dropdown-content">
+                                    <a href="{% url 'admin-approval'%}">DashBoard</a>
+                                    <br>
+                                    <a href="{%url 'list-testimonial'%}"> All TESTIMONIALS</a>
+                                    <br>
+                                    <a href="{%url 'add-testimonial'%}">ADD TESTIMONIAL</a>
+                                    <br>
+                                    <a href="{% url 'list-articles' %}"> All ARTICLES</a>
+                                    <br>
+                                    <a href="{% url 'add-article' %}">ADD ARTICLE</a>
+                                    <br>
+                                    <a href="{%url 'list-team' %}">TEAM</a>
+                                    <br>
+                                    <a href="{%url 'add-team'%}">ADD TEAM</a>
+                                    <br>
+                                    <a href="{% url 'list-offices'%}">OFFICES</a>
+                                    <br>
+                                    <a href="{% url 'add-office'%}">ADD OFFICE</a>
+                                    <br>
+                                    <a href="{% url 'logout'%}">LOGOUT</a>
+                                </div>
+                            </div>
+                        </li>
+                    {%endif%}
+                {%endif%}
+            </ul>
+        </aside>
+    <!--javascript-->
+    <script src="{% static 'nav.js'%}"></script>
+    </body>
+</html>
