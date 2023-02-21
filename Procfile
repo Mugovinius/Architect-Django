@@ -1,0 +1,1 @@
+web: gunicorn architect_x.wsgi
